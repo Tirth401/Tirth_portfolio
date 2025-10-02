@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Education } from "@/types";
+import type { Education } from "@/types";
 
 const educationData: Education[] = [
   {

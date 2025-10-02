@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Skill } from "@/types";
+import type { Skill } from "@/types";
 
 const skills: Skill[] = [
   {
