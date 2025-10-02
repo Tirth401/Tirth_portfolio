@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tirth Shah - Portfolio Website
 
-## Getting Started
+A modern, interactive portfolio website showcasing my work as an AI Engineer and Full Stack Developer.
 
-First, run the development server:
+## 🌟 Features
 
+- **Modern UI/UX**: Clean, responsive design with smooth animations
+- **Custom Cursor**: Interactive cursor with trailing effect
+- **Sections**:
+  - Hero with animated background
+  - About Me with profile showcase
+  - Work Experience timeline
+  - Education details
+  - Skills categorized by technology
+  - Projects with detailed descriptions
+  - Contact form with Web3Forms integration
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 (React)
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Deployment**: Vercel
+- **Form**: Web3Forms API
+- **Icons**: SVG components
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd tirth-portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+Create a `.env.local` file and add:
+```
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_access_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Build for Production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Deployment
 
-## Deploy on Vercel
+This project is optimized for deployment on Vercel:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to GitHub
+2. Import the repository in Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📧 Contact Form Setup
+
+The contact form uses Web3Forms. To set it up:
+
+1. Visit [web3forms.com](https://web3forms.com)
+2. Enter your email to get an access key
+3. Add the key to `.env.local`
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 👤 Author
+
+**Tirth Shah**
+- LinkedIn: [Tirth Shah](https://www.linkedin.com/in/tirth-shah-bb2468269/)
+- GitHub: [@Tirth401](https://github.com/Tirth401)
+- Email: tirthshah889@gmail.com
+
+---
+
+Built with ❤️ using Next.js and Tailwind CSS
