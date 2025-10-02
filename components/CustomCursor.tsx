@@ -12,7 +12,7 @@ const CustomCursor = () => {
   const [trail, setTrail] = useState<Position[]>([]);
   const [isPointer, setIsPointer] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const updateCursor = (e: MouseEvent) => {
