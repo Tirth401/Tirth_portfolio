@@ -224,7 +224,8 @@ input, textarea {
     cursor: auto !important;
   }
   .custom-cursor-dot,
-  .custom-cursor-ring {
-    display: none;
+  .custom-cursor-ring,
+  .custom-cursor-trail {
+    display: none !important;
   }
 }

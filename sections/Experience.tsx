@@ -86,7 +86,7 @@ const Experience = () => {
               }`}
             >
               {/* Enhanced Timeline dot */}
-              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 z-20">
+              <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 md:-translate-x-1/2 z-20 top-8">
                 <div className="relative w-6 h-6 bg-primary rounded-full border-4 border-background shadow-lg">
                   <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75" />
                 </div>
