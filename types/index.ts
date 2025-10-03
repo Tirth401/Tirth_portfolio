@@ -25,6 +25,7 @@ export interface Project {
   description: string;
   features: string[];
   technologies: string[];
+  category: "Machine Learning" | "Software Development" | "Agentic AI" | "Data Engineering";
   githubUrl?: string;
   liveUrl?: string;
   imageUrl?: string;
