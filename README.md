@@ -49,7 +49,7 @@ Project illustrations are architecture studies and an interface concept, not scr
 
 ## Deployment
 
-The project remains compatible with the existing Vercel setup. Review the redesign branch, merge or push it to the intended branch, then let the connected Vercel project build it. The preview work does not publish or alter the existing live site.
+The project remains compatible with the existing Vercel setup. Review the redesign branch, merge or push it to the intended branch, then let the connected Vercel project build it. The production portfolio is hosted at https://bytirth.vercel.app/. Check the GitHub commit status and Vercel deployment status after publishing.
 
 Set `metadataBase` in `app/layout.tsx` if your production URL changes. The current value preserves the resume’s portfolio URL, `https://bytirth.vercel.app`.
 

@@ -30,4 +30,4 @@ Testing uses Chromium through locally installed Google Chrome. Safari and Firefo
 
 ## Delivery state
 
-The original GitHub repository was cloned. Changes are on local branch `redesign/systems-portfolio`; no push or production deployment has been performed. The local preview runs on port 3100 while the server process is active.
+The source is maintained in `Tirth401/Tirth_portfolio`. The redesign was prepared on `redesign/systems-portfolio` for publication to `main` and the connected Vercel production projects. GitHub and Vercel deployment checks record the live release status. The optional local preview runs on port 3100 while its server is active.
