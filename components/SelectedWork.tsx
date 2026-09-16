@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./SelectedWork.module.css";
 
 type Category = "All work" | "AI systems" | "Research" | "Applications";
@@ -458,29 +458,82 @@ function NewsVisual() {
 
 const visuals = [KnowledgeVisual, ResearchVisual, AgentVisual, NewsVisual];
 
+function projectForHash(hash: string) {
+  return projects.find((project) => hash === `#project-${project.id}`);
+}
+
 export default function SelectedWork() {
   const [category, setCategory] = useState<Category>("All work");
   const [selected, setSelected] = useState<Project | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const openerRef = useRef<HTMLButtonElement | null>(null);
+  const openerRef = useRef<HTMLElement | null>(null);
   const visibleProjects = projects.filter(
     (project) => category === "All work" || project.category === category,
   );
+
+  const closeDialog = useCallback(() => {
+    // Native `close` events are queued. Clean up now so an old event cannot
+    // erase a new project request made immediately after closing this one.
+    dialogRef.current?.close();
+    setSelected(null);
+    if (projectForHash(window.location.hash)) {
+      window.history.replaceState(window.history.state, "", "#work");
+    }
+    if (openerRef.current?.isConnected) {
+      openerRef.current.focus({ preventScroll: true });
+    }
+    openerRef.current = null;
+  }, []);
+
+  useEffect(() => {
+    function openProjectFromHash() {
+      const project = projectForHash(window.location.hash);
+      if (project) {
+        // Resolve against the full collection, including filtered-out cards.
+        setSelected({ ...project });
+      } else {
+        closeDialog();
+      }
+    }
+
+    function rememberProjectLink(event: MouseEvent) {
+      if (
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        !(event.target instanceof Element)
+      )
+        return;
+
+      const link = event.target.closest<HTMLAnchorElement>(
+        'a[href^="#project-"]',
+      );
+      if (link && projectForHash(link.hash)) openerRef.current = link;
+    }
+
+    document.addEventListener("click", rememberProjectLink);
+    window.addEventListener("hashchange", openProjectFromHash);
+    // Read a shared project URL after the first render, once the dialog exists.
+    const initialFrame = window.requestAnimationFrame(openProjectFromHash);
+    return () => {
+      window.cancelAnimationFrame(initialFrame);
+      document.removeEventListener("click", rememberProjectLink);
+      window.removeEventListener("hashchange", openProjectFromHash);
+    };
+  }, [closeDialog]);
 
   useEffect(() => {
     if (!selected) return;
     const dialog = dialogRef.current;
     const previousOverflow = document.body.style.overflow;
-    dialog?.showModal();
+    if (dialog && !dialog.open) dialog.showModal();
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = previousOverflow;
     };
   }, [selected]);
-
-  function closeDialog() {
-    dialogRef.current?.close();
-  }
 
   return (
     <section
@@ -555,7 +608,12 @@ export default function SelectedWork() {
                 type="button"
                 onClick={(event) => {
                   openerRef.current = event.currentTarget;
-                  setSelected(project);
+                  window.history.pushState(
+                    window.history.state,
+                    "",
+                    `#project-${project.id}`,
+                  );
+                  setSelected({ ...project });
                 }}
                 aria-label={`Explore project: ${project.name}`}
               >
@@ -572,9 +630,9 @@ export default function SelectedWork() {
         ref={dialogRef}
         className={styles.dialog}
         aria-labelledby="project-dialog-title"
-        onClose={() => {
-          setSelected(null);
-          openerRef.current?.focus();
+        onCancel={(event) => {
+          event.preventDefault();
+          closeDialog();
         }}
         onClick={(event) => {
           if (event.target !== event.currentTarget) return;

@@ -1,5 +1,5 @@
 import Arrow from "./Arrow";
-import SystemsCanvas from "./SystemsCanvas";
+import WorkExplorer from "./WorkExplorer";
 
 export default function Intro() {
   return (
@@ -29,9 +29,8 @@ export default function Intro() {
             </span>
           </h1>
           <p>
-            I’m Tirth — an engineer connecting AI, research,
-            <br className="desktop-break" /> and thoughtful software to build
-            things that matter.
+            I’m Tirth — I turn AI research into reliable systems, useful
+            applications, and better ways to learn.
           </p>
           <div className="hero-actions">
             <a className="button button-dark" href="#work">
@@ -53,7 +52,7 @@ export default function Intro() {
             </div>
           </div>
         </div>
-        <SystemsCanvas />
+        <WorkExplorer />
       </div>
       <div className="proof-strip">
         <div className="proof-intro">

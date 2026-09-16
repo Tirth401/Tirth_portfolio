@@ -1,0 +1,497 @@
+.explorer {
+  min-width: 0;
+  align-self: center;
+  background: #efefe7;
+  border: 1px solid #d6dacd;
+  box-shadow: 8px 8px 0 #e7e8de;
+  padding: 23px 25px 20px;
+  border-radius: 3px;
+}
+.topline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topline h2 {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  line-height: 1.3;
+}
+.marker {
+  color: var(--blue);
+  font-size: 23px;
+  line-height: 1;
+}
+.projectTabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid #d2d7c9;
+  background: #e6e8de;
+  margin: 17px 0 18px;
+  border-radius: 3px;
+}
+.projectTabs button {
+  border: 0;
+  background: transparent;
+  padding: 10px 4px;
+  font-size: 11px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  white-space: nowrap;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.projectTabs button > span {
+  font: 8px var(--font-mono);
+  opacity: 0.65;
+}
+.projectTabs button[aria-pressed="true"] {
+  color: white;
+  background: var(--blue);
+}
+.projectTabs button:hover:not([aria-pressed="true"]) {
+  background: #f4f3ed;
+}
+.context {
+  font: 8px/1.6 var(--font-mono);
+  letter-spacing: 0.65px;
+  color: var(--blue);
+}
+.projectIntro h3 {
+  font-size: 27px;
+  line-height: 1.14;
+  letter-spacing: -1.3px;
+  margin: 8px 0 9px;
+}
+.summary {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #62695c;
+  max-width: 440px;
+  min-height: 41px;
+}
+.flowLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0 11px;
+  font: 7px/1.5 var(--font-mono);
+  letter-spacing: 0.4px;
+  color: #6c745f;
+}
+.flowLabel span:last-child {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 0;
+  color: #59674b;
+}
+.flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.flow li {
+  position: relative;
+  min-width: 0;
+}
+.flow button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 12px 6px 10px;
+  text-align: center;
+  background: #f7f7f1;
+  border: 1px solid #cfd5c5;
+  border-radius: 3px;
+  color: #617153;
+  position: relative;
+  transition:
+    background 0.18s,
+    border-color 0.18s,
+    color 0.18s;
+  height: 100%;
+  min-height: 150px;
+}
+.flow button:hover {
+  border-color: var(--blue);
+}
+.flow button.selectedStep {
+  background: #e5eafd;
+  border-color: var(--blue);
+  color: var(--blue);
+}
+.flow button > svg {
+  width: 53px;
+  height: 47px;
+  margin: 5px 0 9px;
+}
+.stepNumber {
+  font: 7px var(--font-mono);
+  align-self: flex-start;
+  color: #7a836c;
+}
+.selectedStep .stepNumber {
+  color: var(--blue);
+}
+.stepLabel {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  color: var(--ink);
+  max-width: 110px;
+  min-height: 31px;
+}
+.stepTool {
+  color: #737b68;
+  line-height: 1.4;
+  margin-top: 6px;
+  font-size: 9px;
+}
+.selectedStep .stepTool {
+  color: #3859b8;
+}
+.connector {
+  position: absolute;
+  left: calc(100% + 4px);
+  top: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  color: #90997f;
+}
+.connector svg {
+  width: 15px;
+  height: 15px;
+}
+.stepDetail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 0 18px;
+  min-height: 96px;
+}
+.detailIndex {
+  font: 8px var(--font-mono);
+  color: var(--blue);
+  border: 1px solid #c4cfef;
+  background: #e5eafd;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  margin-top: 1px;
+}
+.stepDetail h4 {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: -0.15px;
+  font-weight: 500;
+  margin: 0 0 5px;
+}
+.stepDetail p {
+  font-size: 11px;
+  line-height: 1.65;
+  color: #62695c;
+  max-width: 415px;
+}
+.outcomes {
+  border-top: 1px solid #d1d7c7;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  padding: 17px 0 16px;
+  gap: 16px;
+}
+.outcomes > div {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+.outcomes strong {
+  font: 500 31px/1 var(--font-sans);
+  letter-spacing: -1.8px;
+  color: var(--blue);
+  white-space: nowrap;
+}
+.outcomes div > span {
+  font-size: 9px;
+  line-height: 1.5;
+  max-width: 62px;
+  color: #62695c;
+}
+.outcomeLabel {
+  font: 7px/1.7 var(--font-mono);
+  letter-spacing: 0.8px;
+  color: #7a826d;
+}
+.projectLink {
+  border-top: 1px solid #d1d7c7;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 500;
+}
+.projectLink svg {
+  width: 16px;
+  height: 16px;
+}
+.projectLink:hover {
+  color: var(--blue);
+}
+.explorer button:focus-visible,
+.explorer a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+@media (max-width: 1150px) {
+  .explorer {
+    padding: 19px 18px 17px;
+  }
+  .projectTabs button {
+    font-size: 9px;
+    gap: 5px;
+  }
+  .flow {
+    gap: 18px;
+  }
+  .connector {
+    left: calc(100% + 2px);
+    width: 14px;
+  }
+  .stepLabel {
+    font-size: 11px;
+  }
+  .stepTool {
+  }
+  .flow button {
+    padding-inline: 4px;
+  }
+  .projectIntro h3 {
+    font-size: 25px;
+  }
+  .outcomes strong {
+    font-size: 27px;
+  }
+  .outcomes {
+    gap: 12px;
+  }
+  .outcomes div > span {
+    font-size: 8px;
+  }
+  .outcomes > div {
+    gap: 6px;
+  }
+  .outcomeLabel {
+    display: none;
+  }
+}
+@media (min-width: 681px) and (max-width: 900px) {
+  .explorer {
+    padding: 16px 14px;
+    box-shadow: 5px 5px 0 #e7e8de;
+  }
+  .topline h2 {
+    font-size: 14px;
+  }
+  .projectTabs button {
+    font-size: 8px;
+    padding: 10px 2px;
+  }
+  .projectTabs button > span {
+    display: none;
+  }
+  .projectIntro h3 {
+    font-size: 22px;
+  }
+  .summary {
+    font-size: 11px;
+    min-height: 56px;
+  }
+  .context {
+    font-size: 7px;
+  }
+  .flowLabel {
+    font-size: 6px;
+  }
+  .flowLabel span:last-child {
+    font-size: 8px;
+  }
+  .flow {
+    gap: 13px;
+  }
+  .connector {
+    width: 11px;
+    left: calc(100% + 1px);
+  }
+  .connector svg {
+    width: 11px;
+  }
+  .flow button {
+  }
+  .stepLabel {
+    font-size: 10px;
+  }
+  .stepTool {
+  }
+  .stepDetail {
+    min-height: 140px;
+    gap: 8px;
+  }
+  .stepDetail p {
+    font-size: 10px;
+  }
+  .stepDetail h4 {
+    font-size: 11px;
+  }
+  .detailIndex {
+    width: 20px;
+    height: 20px;
+  }
+  .outcomes strong {
+    font-size: 25px;
+  }
+}
+@media (max-width: 680px) {
+  .explorer {
+    width: 100%;
+    max-width: 470px;
+    margin: auto;
+    padding: 19px 17px 17px;
+    box-shadow: 5px 5px 0 #e7e8de;
+  }
+  .topline h2 {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+  }
+  .projectTabs {
+    margin: 18px 0 21px;
+  }
+  .projectTabs button {
+    font-size: 10px;
+    gap: 6px;
+    padding: 10px 2px;
+  }
+  .projectTabs button > span {
+    font-size: 7px;
+  }
+  .context {
+    font-size: 7px;
+  }
+  .projectIntro h3 {
+    font-size: 25px;
+  }
+  .summary {
+    font-size: 12px;
+    min-height: 61px;
+  }
+  .flowLabel {
+    font-size: 6px;
+    margin-top: 18px;
+  }
+  .flowLabel span:last-child {
+    font-size: 8px;
+  }
+  .flow {
+    gap: 14px;
+  }
+  .flow button {
+    padding-inline: 4px;
+  }
+  .stepLabel {
+    font-size: 11px;
+  }
+  .stepTool {
+  }
+  .connector {
+    width: 12px;
+    left: calc(100% + 1px);
+  }
+  .connector svg {
+    width: 12px;
+  }
+  .stepDetail {
+    min-height: 138px;
+    padding-top: 16px;
+    gap: 9px;
+  }
+  .stepDetail p {
+    font-size: 11px;
+  }
+  .stepDetail h4 {
+    font-size: 12px;
+  }
+  .outcomes {
+    padding: 16px 0;
+    gap: 12px;
+  }
+  .outcomes strong {
+    font-size: 30px;
+  }
+  .outcomes div > span {
+    font-size: 9px;
+  }
+  .projectLink {
+    font-size: 11px;
+  }
+}
+@media (max-width: 380px) {
+  .explorer {
+    padding-inline: 13px;
+  }
+  .topline h2 {
+    font-size: 15px;
+  }
+  .projectTabs button {
+    font-size: 9px;
+  }
+  .projectTabs button > span {
+    display: none;
+  }
+  .flow {
+    gap: 12px;
+  }
+  .flow button {
+  }
+  .stepLabel {
+    font-size: 10px;
+  }
+  .stepTool {
+  }
+  .flow button > svg {
+    width: 46px;
+  }
+  .stepDetail {
+    min-height: 157px;
+  }
+  .outcomes strong {
+    font-size: 28px;
+  }
+  .outcomes div > span {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .projectTabs button,
+  .flow button {
+    transition: none;
+  }
+}

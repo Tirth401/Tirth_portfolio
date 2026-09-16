@@ -2,7 +2,7 @@
 
 An editorial portfolio for Tirth Shah’s work in AI engineering, applied research, and full-stack development. Built with Next.js, React, and TypeScript.
 
-The redesign pairs warm paper tones and cobalt with a custom interactive 3D wireframe sculpture, four project studies, and clear evidence of real work. All resume facts and the downloadable PDF were updated from the supplied Tirth_resume.pdf.
+The redesign pairs warm paper tones and cobalt with an interactive map of real project workflows, four project studies, and clear evidence of real work. All resume facts and the downloadable PDF were updated from the supplied Tirth_resume.pdf.
 
 ## Run locally
 
@@ -24,8 +24,8 @@ npm start
 
 ## What is included
 
-- Three interactive visual studies: Knowledge, Evolution, and Agents. Drag with a mouse to rotate, use the buttons to switch studies, or pause the motion. Reduced-motion preferences are respected; static scenes avoid continuous redraws, and drawing pauses offscreen.
-- Four filterable project studies with accessible native dialog details, Escape-to-close, and focus restoration.
+- A hero project explorer connects three real projects to their inputs, implementation, and outcomes: ONLC knowledge retrieval, SAGAFS biomedical feature selection, and a multi-agent PDF application. Each step explains Tirth’s contribution, and each project opens its matching case study.
+- Four filterable project studies with accessible native dialog details, Escape-to-close, focus restoration, and shareable links (`/#project-01` through `/#project-04`).
 - Current resume, accurate employment dates, education, community involvement, and grouped capabilities.
 - Mobile navigation, keyboard focus states, a skip link, expandable experience, and a copy-email action.
 - Local fonts, portrait optimization, favicon, metadata, and a generated Open Graph image.
@@ -33,17 +33,17 @@ npm start
 
 ## Updating the content
 
-| Content                                   | Location                                    |
-| ----------------------------------------- | ------------------------------------------- |
-| Resume PDF                                | `public/resume.pdf`                         |
-| Hero and impact metrics                   | `components/Intro.tsx`                      |
-| Project stories and illustrations         | `components/SelectedWork.tsx`               |
-| Work history, education, skills, portrait | `components/AboutExperience.tsx`            |
-| Contact and social links                  | `components/ContactFooter.tsx`              |
-| Interactive sculpture                     | `components/SystemsCanvas.tsx`              |
-| Page composition                          | `app/page.tsx`                              |
-| Colors, typography, navigation, hero      | `app/globals.css`                           |
-| Search and sharing metadata               | `app/layout.tsx`, `app/opengraph-image.tsx` |
+| Content                                   | Location                                                            |
+| ----------------------------------------- | ------------------------------------------------------------------- |
+| Resume PDF                                | `public/resume.pdf`                                                 |
+| Hero and impact metrics                   | `components/Intro.tsx`                                              |
+| Project stories and illustrations         | `components/SelectedWork.tsx`                                       |
+| Work history, education, skills, portrait | `components/AboutExperience.tsx`                                    |
+| Contact and social links                  | `components/ContactFooter.tsx`                                      |
+| Interactive project workflows             | `components/WorkExplorer.tsx`, `components/WorkExplorer.module.css` |
+| Page composition                          | `app/page.tsx`                                                      |
+| Colors, typography, navigation, hero      | `app/globals.css`                                                   |
+| Search and sharing metadata               | `app/layout.tsx`, `app/opengraph-image.tsx`                         |
 
 Project illustrations are architecture studies and an interface concept, not screenshots or live telemetry. Professional work has no invented demo or repository link. The NeuzNow repository link comes from the original portfolio.
 

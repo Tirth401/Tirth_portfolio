@@ -1,32 +1,33 @@
 # Redesign validation
 
-Validated on September 16, 2026 against the local production build.
+Validated on September 16, 2026 against local desktop and mobile previews.
 
-## Automated checks
+## Build and dependency checks
 
-- `npm run lint`: passed.
-- `npm run typecheck`: passed.
-- `npm run build`: passed; the home page is statically prerendered.
-- `npm audit`: 0 reported vulnerabilities.
-- `git diff --check`: passed.
-- 22 browser checks passed in Chromium using the locally installed Google Chrome.
+- `npm run lint` and `npm run typecheck` pass.
+- `npm run build` generates a statically prerendered home page.
+- `npm audit` reports 0 vulnerabilities.
+- `git diff --check` passes.
 
-## Browser coverage
+## Project explorer revision
 
-- Four projects render and filtering updates the result count and displayed cards.
-- Project dialogs open, close with Escape, and restore focus to the initiating button.
-- All three sculpture modes update their visuals and captions.
-- Animation runs when motion is allowed; pause stops it; pointer dragging changes the view.
-- Reduced-motion rendering and desktop/mobile presentation were visually inspected.
-- Copy-email writes the intended address to the clipboard.
-- The resume route returns HTTP 200 and is byte-identical to the supplied new resume.
-- No horizontal overflow at 360, 390, 680, 768, 1024, or 1440 pixels after layout settles.
-- Mobile navigation opens and closes after section selection.
-- No uncaught browser errors were observed.
-- The portrait loads through the image optimizer. The NeuzNow repository link returns HTTP 200.
+The abstract hero sculpture was replaced with three simplified workflows from the resume: ONLC knowledge retrieval, SAGAFS biomedical feature selection, and the agentic PDF application. All nine steps describe Tirth’s contribution. Metrics are reported project outcomes, not live telemetry.
 
-Desktop, mobile, and project-dialog screenshots were reviewed. Safari and Firefox were not run in this environment.
+Browser coverage includes:
+
+- Switching all three workflows and all nine steps.
+- Matching project titles, contextual explanations, and pressed states.
+- Opening each matching project dialog directly from the hero.
+- Escape-to-close and restoring focus to the real triggering link.
+- Opening projects while their cards are filtered out.
+- Loading a shared `#project-02` URL directly.
+- Checking horizontal overflow and workflow text at 360, 390, 680, 768, 1024, and 1440 pixels.
+- Visual review of desktop and mobile presentation.
+
+The earlier complete-site checks also covered mobile navigation, project filtering, clipboard copying, optimized portrait loading, and the resume download. The resume is byte-identical to the supplied PDF. The NeuzNow repository link returned HTTP 200.
+
+Testing uses Chromium through locally installed Google Chrome. Safari and Firefox were not run in this environment.
 
 ## Delivery state
 
-The original GitHub repository was cloned, with changes on local branch `redesign/systems-portfolio`. No push or production deployment was performed. The local production preview runs on port 3100 while its server process is active.
+The original GitHub repository was cloned. Changes are on local branch `redesign/systems-portfolio`; no push or production deployment has been performed. The local preview runs on port 3100 while the server process is active.
