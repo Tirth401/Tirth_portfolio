@@ -1,0 +1,549 @@
+.experience,
+.about {
+  scroll-margin-top: 92px;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.experience {
+  padding: 108px 0 112px;
+  border-top: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 46px;
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  line-height: 1.5;
+}
+
+.experienceLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 90px;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: clamp(38px, 4.1vw, 54px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.07;
+}
+
+.introCopy {
+  max-width: 310px;
+  margin: 25px 0 24px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.resumeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 4px 0 8px;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.resumeLink:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.resumeLink span {
+  font-size: 18px;
+}
+
+.resumeLink:focus-visible,
+.roleSummary:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 6px;
+}
+
+.roles {
+  border-top: 1px solid var(--ink);
+}
+
+.role {
+  border-bottom: 1px solid var(--line);
+}
+
+.roleSummary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.roleSummary::-webkit-details-marker {
+  display: none;
+}
+
+.roleSummary::marker {
+  content: "";
+}
+
+.roleInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.roleTitle {
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  transition: color 160ms ease;
+}
+
+.roleSummary:hover .roleTitle {
+  color: var(--blue);
+}
+
+.company {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 11px;
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.currentDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.expandIcon {
+  position: relative;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+
+.expandIcon::before,
+.expandIcon::after {
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  width: 10px;
+  height: 1px;
+  background: var(--ink);
+  content: "";
+}
+
+.expandIcon::after {
+  transform: rotate(90deg);
+  transition: transform 160ms ease;
+}
+
+.role[open] .expandIcon::after {
+  transform: rotate(0deg);
+}
+
+.roleBody {
+  padding: 0 32px 30px 0;
+}
+
+.roleDescription {
+  margin: 0 0 19px;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.outcomes {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding-left: 15px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+  list-style: disc;
+}
+
+.outcomes li {
+  padding-left: 4px;
+}
+
+.outcomes li::marker {
+  color: var(--blue);
+  font-size: 8px;
+}
+
+.roleTools {
+  margin: 23px 0 0;
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.about {
+  padding: 104px 0 104px;
+  border-top: 1px solid var(--line);
+}
+
+.aboutLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  align-items: center;
+  gap: 88px;
+}
+
+.portrait {
+  min-width: 0;
+  margin: 0;
+}
+
+.photoFrame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 0.88;
+  background: #deded4;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: 49% 50%;
+}
+
+.photoLabel {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  padding: 9px 11px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.photoCaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+.aboutCopy .heading {
+  font-size: clamp(35px, 3.8vw, 49px);
+}
+
+.bioLead {
+  margin: 29px 0 15px;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+}
+
+.bio {
+  max-width: 510px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.personalDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 23px;
+  margin-top: 31px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
+
+.detailLabel {
+  display: block;
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.personalDetail h3 {
+  margin: 12px 0 6px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+}
+
+.personalDetail p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.detailHighlight {
+  display: block;
+  margin-top: 9px;
+  color: var(--blue);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.toolbox {
+  margin-top: 88px;
+  padding-top: 31px;
+  border-top: 1px solid var(--line);
+}
+
+.toolboxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.toolboxHeader h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.capabilities {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.capability {
+  padding: 0 24px;
+  border-left: 1px solid var(--line);
+}
+
+.capability:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.capability:last-child {
+  padding-right: 0;
+}
+
+.capabilityNumber {
+  display: block;
+  margin-bottom: 13px;
+  color: var(--blue);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.capability h4 {
+  margin: 0 0 9px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+}
+
+.capabilityPurpose {
+  margin: 0 0 17px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.capabilityTools {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+@media (max-width: 1000px) {
+  .experienceLayout {
+    gap: 44px;
+  }
+
+  .aboutLayout {
+    gap: 42px;
+  }
+
+  .aboutCopy .heading {
+    font-size: 37px;
+  }
+
+  .personalDetails {
+    grid-template-columns: 1fr;
+    gap: 21px;
+  }
+
+  .photoFrame {
+    aspect-ratio: 0.68;
+  }
+
+  .photoCaption {
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .capability {
+    padding: 0 17px;
+  }
+}
+
+@media (max-width: 700px) {
+  .experience,
+  .about {
+    padding: 72px 0;
+    scroll-margin-top: 74px;
+  }
+
+  .eyebrow {
+    margin-bottom: 31px;
+    font-size: 10px;
+  }
+
+  .experienceLayout,
+  .aboutLayout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .heading,
+  .aboutCopy .heading {
+    font-size: clamp(35px, 7vw, 46px);
+  }
+
+  .introCopy {
+    max-width: 380px;
+    margin-top: 20px;
+  }
+
+  .roleSummary {
+    padding: 25px 0;
+  }
+
+  .roleTitle {
+    font-size: 22px;
+  }
+
+  .roleBody {
+    padding-right: 0;
+  }
+
+  .photoFrame {
+    aspect-ratio: 1.07;
+    max-height: 540px;
+  }
+
+  .photoCaption {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .aboutLayout {
+    gap: 35px;
+  }
+
+  .bioLead {
+    margin-top: 23px;
+    font-size: 17px;
+  }
+
+  .personalDetails {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .personalDetail h3 {
+    font-size: 14px;
+  }
+
+  .toolbox {
+    margin-top: 56px;
+  }
+
+  .toolboxHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 31px;
+  }
+
+  .toolboxHeader h3 {
+    font-size: 26px;
+  }
+
+  .capabilities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 33px;
+  }
+
+  .capability {
+    padding: 0 0 0 19px;
+  }
+
+  .capability:nth-child(odd) {
+    padding: 0 19px 0 0;
+    border-left: 0;
+  }
+
+  .capability h4 {
+    font-size: 18px;
+  }
+
+  .capabilityPurpose {
+    min-height: 35px;
+    margin-bottom: 12px;
+  }
+
+  .capabilityTools {
+    font-size: 11px;
+    line-height: 1.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resumeLink,
+  .roleTitle,
+  .expandIcon::after {
+    transition: none;
+  }
+}

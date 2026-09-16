@@ -1,97 +1,60 @@
-# Tirth Shah - Portfolio Website
+# Tirth Shah — Portfolio
 
-A modern, interactive portfolio website showcasing my work as an AI Engineer and Full Stack Developer.
+An editorial portfolio for Tirth Shah’s work in AI engineering, applied research, and full-stack development. Built with Next.js, React, and TypeScript.
 
-## 🌟 Features
+The redesign pairs warm paper tones and cobalt with a custom interactive 3D wireframe sculpture, four project studies, and clear evidence of real work. All resume facts and the downloadable PDF were updated from the supplied Tirth_resume.pdf.
 
-- **Modern UI/UX**: Clean, responsive design with smooth animations
-- **Custom Cursor**: Interactive cursor with trailing effect
-- **Sections**:
-  - Hero with animated background
-  - About Me with profile showcase
-  - Work Experience timeline
-  - Education details
-  - Skills categorized by technology
-  - Projects with detailed descriptions
-  - Contact form with Web3Forms integration
+## Run locally
 
-## 🛠️ Tech Stack
+Use Node.js 20.9 or newer.
 
-- **Framework**: Next.js 15 (React)
-- **Styling**: Tailwind CSS
-- **Language**: TypeScript
-- **Deployment**: Vercel
-- **Form**: Web3Forms API
-- **Icons**: SVG components
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ installed
-- npm or yarn package manager
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd tirth-portfolio
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Set up environment variables:
-Create a `.env.local` file and add:
-```
-NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_access_key_here
-```
-
-4. Run the development server:
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+Open http://localhost:3000. To choose another port: `npm run dev -- --port 3100`.
 
-## 📦 Build for Production
-
-```bash
+```sh
+npm run lint
+npm run typecheck
 npm run build
 npm start
 ```
 
-## 🌐 Deployment
+## What is included
 
-This project is optimized for deployment on Vercel:
+- Three interactive visual studies: Knowledge, Evolution, and Agents. Drag with a mouse to rotate, use the buttons to switch studies, or pause the motion. Reduced-motion preferences are respected; static scenes avoid continuous redraws, and drawing pauses offscreen.
+- Four filterable project studies with accessible native dialog details, Escape-to-close, and focus restoration.
+- Current resume, accurate employment dates, education, community involvement, and grouped capabilities.
+- Mobile navigation, keyboard focus states, a skip link, expandable experience, and a copy-email action.
+- Local fonts, portrait optimization, favicon, metadata, and a generated Open Graph image.
+- Direct email, GitHub, and LinkedIn links. No contact service credentials are required.
 
-1. Push your code to GitHub
-2. Import the repository in Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy!
+## Updating the content
 
-## 📧 Contact Form Setup
+| Content                                   | Location                                    |
+| ----------------------------------------- | ------------------------------------------- |
+| Resume PDF                                | `public/resume.pdf`                         |
+| Hero and impact metrics                   | `components/Intro.tsx`                      |
+| Project stories and illustrations         | `components/SelectedWork.tsx`               |
+| Work history, education, skills, portrait | `components/AboutExperience.tsx`            |
+| Contact and social links                  | `components/ContactFooter.tsx`              |
+| Interactive sculpture                     | `components/SystemsCanvas.tsx`              |
+| Page composition                          | `app/page.tsx`                              |
+| Colors, typography, navigation, hero      | `app/globals.css`                           |
+| Search and sharing metadata               | `app/layout.tsx`, `app/opengraph-image.tsx` |
 
-The contact form uses Web3Forms. To set it up:
+Project illustrations are architecture studies and an interface concept, not screenshots or live telemetry. Professional work has no invented demo or repository link. The NeuzNow repository link comes from the original portfolio.
 
-1. Visit [web3forms.com](https://web3forms.com)
-2. Enter your email to get an access key
-3. Add the key to `.env.local`
+## Deployment
 
-## 📄 License
+The project remains compatible with the existing Vercel setup. Review the redesign branch, merge or push it to the intended branch, then let the connected Vercel project build it. The preview work does not publish or alter the existing live site.
 
-This project is open source and available under the MIT License.
+Set `metadataBase` in `app/layout.tsx` if your production URL changes. The current value preserves the resume’s portfolio URL, `https://bytirth.vercel.app`.
 
-## 👤 Author
+## Dependencies and assets
 
-**Tirth Shah**
-- LinkedIn: [Tirth Shah](https://www.linkedin.com/in/tirth-shah-bb2468269/)
-- GitHub: [@Tirth401](https://github.com/Tirth401)
-- Email: tirthshah889@gmail.com
+Next.js and React use patched releases in the existing version lines. A PostCSS override keeps Next’s CSS processing dependency on the same maintained 8.x release as the project. Keep this override until the upstream dependency is patched; rerun the build after dependency updates.
 
----
-
-Built with ❤️ using Next.js and Tailwind CSS
+Space Grotesk and DM Sans are self-hosted under their SIL Open Font Licenses, included in `public/fonts/`. The portrait and resume belong to Tirth Shah.
